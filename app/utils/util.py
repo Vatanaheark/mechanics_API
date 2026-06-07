@@ -5,7 +5,8 @@ from jose import jwt
 import jose
 import os
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "a super secret, secret key")
+SECRET_KEY = os.environ.get("SECRET_KEY") or "a super secret, secret key"
+
 
 def token_required(f):
     @wraps(f)
