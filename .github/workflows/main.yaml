@@ -31,3 +31,11 @@ jobs:
 
       - name: Run placeholder tests
         run: echo "No tests yet"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Render (Action deprecated)
+        run: echo "Render GitHub Action deprecated — deployment handled by Render Auto-Deploy"
