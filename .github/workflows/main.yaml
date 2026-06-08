@@ -31,14 +31,13 @@ jobs:
 
       - name: Run placeholder tests
         run: echo "No tests yet"
+deploy:
+  needs: test
+  runs-on: ubuntu-latest
 
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy to Render
-        uses: renderinc/deploy-action@v1
-        with:
-          serviceId: ${{ secrets.RENDER_SERVICE_ID }}
-          apiKey: ${{ secrets.RENDER_API_KEY }}
+  steps:
+    - name: Deploy to Render
+      uses: renderinc/action-deploy@v1
+      with:
+        serviceId: ${{ secrets.RENDER_SERVICE_ID }}
+        apiKey: ${{ secrets.RENDER_API_KEY }}
