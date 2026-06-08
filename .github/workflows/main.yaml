@@ -38,7 +38,7 @@ jobs:
 
     steps:
       - name: Deploy to Render
-        uses: renderinc/action-deploy@v1
+        uses: renderinc/deploy-action@v1
         with:
           serviceId: ${{ secrets.RENDER_SERVICE_ID }}
           apiKey: ${{ secrets.RENDER_API_KEY }}
