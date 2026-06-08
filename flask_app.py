@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from flask import Flask
 from config import ProductionConfig
 from app.models import db
@@ -8,11 +11,9 @@ def create_app(config_class=ProductionConfig):
     app.config.from_object(config_class)
 
     CORS(app)
-
     db.init_app(app)
 
     # register blueprints here
-    # from app.routes import mechanic_bp
-    # app.register_blueprint(mechanic_bp)
+    # app.register_blueprint(...)
 
     return app
