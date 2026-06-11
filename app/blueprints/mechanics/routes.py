@@ -3,7 +3,8 @@ from marshmallow import ValidationError
 from sqlalchemy import select
 
 from app.blueprints.mechanics import mechanics_bp
-from app.extensions import db, cache
+from app.models import db
+from app.extensions import cache
 from app.models import Mechanics
 from .schemas import mechanic_schema, mechanics_schema
 
